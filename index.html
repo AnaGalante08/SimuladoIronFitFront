@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>IronFit</title>
+</head>
+<body>
+
+  
+    <div id="login-box">
+        <h2>IronFit - Login</h2>
+        <input type="email" id="email" placeholder="Email"><br><br>
+        <input type="password" id="senha" placeholder="Senha"><br><br>
+        <button onclick="login()">Entrar</button>
+    </div>
+
+   
+    <div id="main-box" style="display: none;">
+        <div>
+            <span>Usuário: <strong id="user-nome"></strong></span>
+            <button onclick="logout()">Sair</button>
+        </div>
+        <hr>
+
+        
+        <button onclick="verAba('personals')">Personals</button>
+        <button onclick="verAba('alunos')">Alunos</button>
+        <button onclick="verAba('treinos')">Treinos</button>
+        <br><br>
+
+        
+        <div id="aba-personals">
+            <input type="text" id="busca-p" placeholder="Buscar personal...">
+            <button onclick="carregarPersonals()">Buscar</button>
+            <br><br>
+            <table border="1">
+                <thead><tr><th>ID</th><th>Nome</th><th>Ação</th></tr></thead>
+                <tbody id="tb-personals"></tbody>
+            </table>
+        </div>
+
+       
+        <div id="aba-alunos" style="display: none;">
+            <h3>Cadastrar Aluno</h3>
+            <input type="text" id="aluno-nome" placeholder="Nome"><br><br>
+            <select id="select-personal"></select><br><br>
+            <button onclick="salvarAluno()">Salvar</button>
+        </div>
+
+        
+        <div id="aba-treinos" style="display: none;">
+            <h3>Agendamentos</h3>
+            <table border="1">
+                <thead><tr><th>Data</th><th>Aluno</th><th>Personal</th><th>Ação</th></tr></thead>
+                <tbody id="tb-treinos"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
